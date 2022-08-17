@@ -1,6 +1,6 @@
 # created by virtualenv automatically
 /bin
-/lib
-pyvenv.cfg
+/venv/lib
+venv/pyvenv.cfg
 
 .DS_Store
