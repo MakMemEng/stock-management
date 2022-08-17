@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>ArrowMaterialInventory</title>
+    </head>
+    <body>
+        <h1>材料在庫管理</h1>
+        <form method="post" action="{{ url_for('register') }}">
+            <table border="1">
+                <tr>
+                    <th>材料名</th>
+                    <th>在庫数量</th>
+                    <th>単価</th>
+                </tr>
+                <tr>
+                    <td><input type="text" name="name"></td>
+                    <td><input type="text" name="inventory"></td>
+                    <td><input type="text" name="price"></td>
+                </tr>
+            </table>
+            <br>
+            <input type="submit" value="登録">
+        </form>
+    </body>
+</html>

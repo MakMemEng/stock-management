@@ -1,12 +1,37 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    <h1>材料在庫管理</h1>
-    <h2>材料一覧</h2>
-    <p>在庫はありません</p>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <title>ArrowMaterialInventory</title>
+    </head>
+    <body>
+        <h1>材料在庫管理</h1>
+        <h2>材料在庫一覧</h2>
+            <!--materials: Listが空の場合-->
+            {% if materials == [] %}
+                <p>在庫情報はありません</p>
+            <!--materialsに材料情報がある場合-->
+            {% else %}
+                <table border="1">
+                    <!--テーブルの1行-->
+                    <tr>
+                        <!--見出し-->
+                        <th>材料名</th>
+                        <th>在庫数量</th>
+                        <th>単価 </th>
+                    </tr>
+                    {% for material in materials %}
+                        <!--材料テーブルの1行-->
+                        <tr>
+                            <td>{{ material.name }}</td>
+                            <td>{{ material.inventory }}</td>
+                            <td>{{ material.price }}円</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            {% endif %}
+        <!--urlをクリックしたら，form関数を実行-->
+        <!--return URL-->
+        <a href="{{ url_for('form') }}">編集</a>
+    </body>
 </html>
