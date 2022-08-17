@@ -4,6 +4,7 @@ from flask import render_template
 
 @app.route('/')
 def index():
+    # materials = []
     materials = [
         {'name': 'MCL-E67',
          'inventory': 251,

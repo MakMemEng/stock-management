@@ -6,12 +6,30 @@
     </head>
     <body>
         <h1>材料在庫管理</h1>
-        <h2>材料一覧</h2>
-<!--        <p>在庫はありません</p>-->
-        {% for material in materials %}
-            <p>材料名: {{ material.name }}</p>
-            <p>在庫数量: {{ material.inventory }}</p>
-            <p>単価: {{ material.price }}円</p>
-        {% endfor %}
+        <h2>材料在庫一覧</h2>
+            <!--materials: Listが空の場合-->
+            {% if materials == [] %}
+                <p>在庫情報はありません</p>
+            <!--materialsに材料情報がある場合-->
+            {% else %}
+                <table border="1">
+                    <!--テーブルの1行-->
+                    <tr>
+                        <!--見出し-->
+                        <th>材料名</th>
+                        <th>在庫数量</th>
+                        <th>単価 </th>
+                    </tr>
+                    {% for material in materials %}
+                        <!--材料テーブルの1行-->
+                        <tr>
+                            <td>{{ material.name }}</td>
+                            <td>{{ material.inventory }}</td>
+                            <td>{{ material.price }}円</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            {% endif %}
+
     </body>
 </html>
