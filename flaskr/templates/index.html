@@ -2,7 +2,7 @@
 <html lang="ja">
     <head>
         <meta charset="UTF-8">
-        <title>Title</title>
+        <title>ArrowMaterialInventory</title>
     </head>
     <body>
         <h1>材料在庫管理</h1>
@@ -30,6 +30,8 @@
                     {% endfor %}
                 </table>
             {% endif %}
-
+        <!--urlをクリックしたら，form関数を実行-->
+        <!--return URL-->
+        <a href="{{ url_for('form') }}">編集</a>
     </body>
 </html>
